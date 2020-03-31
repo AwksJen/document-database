@@ -16,10 +16,7 @@ fake = Faker()
 
 
 app = Flask(__name__)
-# app.secret_key = os.getenv('SECRET_KEY', 'secretzzz')
-
-
-# QUOTES = ["a i am ", "b i am ", "sam i am]
+# app.secret_key = os.getenv('SECRET_KEY', 'secretzzz'
 
 
 @app.route('/')
@@ -32,26 +29,20 @@ def index():
 @app.route('/random_quote')
 def random_quote():
     """Return a single random quote as a text string"""
-    # "quotes=QUOTE.QUERY.filter". all"
-    # quote = random.choice(fake)
-    # quotes = Quote.query.all()
-    for quote in range(1):
-        print(fake.text())
-        
+    r = random.choice(list(QUOTES.keys()))
+    print(r)
+    quote = QUOTES[r]
+
     return render_template('random_quote.html', quote = quote)
-
-
-@app.route('/new_random_quote')
-def new_random_quote():
-
-    return render_template('quotes/new_random_quote_form.html')
 
 
 @app.route('/authored_quotes')
 def authored_quotes():
     """Return authored-choice and single quote as a text string or multiple 
        quotes as"""
-    return render_template('authored_quote-s.html')
+    author = request.args.get('author')
+    quote = QUOTES.get(author)
+    return render_template('authored_quote-s.html', quote = quote)
 
 
 @app.route('/possible_author_identities')
