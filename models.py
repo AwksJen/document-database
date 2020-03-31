@@ -12,16 +12,14 @@ class ModelMixin:
 
 
 class Author(ModelMixin, db.Model):
-
     __tablename__ = 'authors'
 
     author_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(), nullable=False)
     quotes = db.relationship('Quote', backref='author')
 
-    #sources = db.relationship('Quote', secondary='sources'
     def __repr__(self):
-        return f'<Author {self.id, name}>'
+        return f'<Author {self.author_id, self.name}>'
 
 
 class Quote(ModelMixin, db.Model):
@@ -29,23 +27,15 @@ class Quote(ModelMixin, db.Model):
     __tablename__ = 'quotes'
 
     quote_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    aquote = db.Column(db.String(), nullable=False)
+    text = db.Column(db.String(), nullable=False)
     author_id = db.Column(db.Integer, db.ForeignKey('authors.author_id'))
-    #sources = db.relationship('Author', secondary='sources')
+
     def __repr__(self):
-        return f'<Quote {self.id, aquote} >'
+        return f'<Quote {self.quote_id, self.text} >'
 
 
-# class Sources(db.Model):
-
-#     __tablename__ = 'sources'
-
-#     author_id = db.Column(db.Integer, db.ForeignKey('authors.author_id'))
-#     quote_id = db.Column(db.Integer, db.ForeignKey('quotes.quote_id'))
-#     source = db.Column(db.String())
-#     source_id = db.Column(db.Integer, primary_key=True)
 def connect_to_db(app):
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///database'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///quotedb'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
@@ -54,13 +44,12 @@ def connect_to_db(app):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
     from flask import Flask
 
     app = Flask(__name__)
 
     connect_to_db(app)
-    db.drop_all()
+    # db.drop_all()
     db.create_all()
 
     print('Connected to database, tables ready.')

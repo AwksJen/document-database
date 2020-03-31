@@ -30,27 +30,29 @@ QUOTES = {'Walt Disney': 'The way to get started is to quit talking and begin \
 
 def seed():
 
-    aquote = Quote(aquote=faker.text())
-
-    for q in range(1):
-        print(quote_id=fake.text())
-
-        aquote.quotes.append(quote)
-        db.session.add(quote)
-
-        db.session.add(aquote)
-        db.session.commit()
-        print('Seeding successful.')
+QUOTES = {'Author': 'Quote'}
 
 
-    if __name__ == '__main__':
-        from flask import Flask
-        app = Flask(__name__)
+def seed():
 
-        connect_to_db(app)
-        db.reflect()
-        db.drop_all()
-        db.create_all()
+    for a, q in QUOTES.items():
+        author = Author(name=a)
+        author.save()
 
-        seed()
-        print('Data ready. Time to code!')
+        quote = Quote(text=q, author_id=author.author_id)
+        quote.save()
+
+    print('Seeding successful.')
+
+
+if __name__ == '__main__':
+    from flask import Flask
+    app = Flask(__name__)
+
+    connect_to_db(app)
+    db.reflect()
+    db.drop_all()
+    db.create_all()
+
+    seed()
+    print('Data ready. Time to code!')
