@@ -1,12 +1,15 @@
 import os
 import random
+from seed import QUOTES
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect
 
 from models import Author, Quote
 
-
 app = Flask(__name__)
+
+
+
 
 # app.secret_key = os.getenv('SECRET_KEY', 'secretzzz'
 
@@ -60,3 +63,6 @@ def authors_list():
     # TODO: Create a new template and list all the authors on it.
     authors = Author.query.all()
     return render_template('authors_list.html', authors=authors)
+
+
+
