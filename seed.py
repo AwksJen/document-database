@@ -1,12 +1,14 @@
+from sqlalchemy import func
+from flask_sqlalchemy import SQLAlchemy
+
 from models import *
+# from faker import Faker
 
-from faker import Faker
+# from faker.providers import lorem
 
-from faker.providers import lorem
+# fake = Faker()
 
-fake = Faker()
-
-fake.texts(nb_texts=3, max_nb_chars=200, ext_word_list=None)
+# fake.texts(nb_texts=3, max_nb_chars=200, ext_word_list=None)
 
 QUOTES = {'Walt Disney': 'The way to get started is to quit talking and begin \
     doing.', 'Nelson Mandela': 'The \
@@ -27,12 +29,8 @@ QUOTES = {'Walt Disney': 'The way to get started is to quit talking and begin \
     game.', 'Dalai Lama': 'The purpose of our lives is to be happy.', 'John\
     Lennon': 'Life is what happens when you\re busy making other plans.', 'Bob\
     Marley': 'Love the life you live. Live the life you love.'}
-
-def seed():
-
-QUOTES = {'Author': 'Quote'}
-
-
+# def seed():
+# QUOTES = {'Author': 'Quote'}
 def seed():
 
     for a, q in QUOTES.items():
