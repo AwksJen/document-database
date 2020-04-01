@@ -41,13 +41,8 @@ def authored_quotes():
     author = request.args.get('author')
     quote = QUOTES.get(author)
     return render_template('authored_quote-s.html', quote = quote)
-
-    # You have this code already.
-    choice = random.randrange(1, Quote.count())
-    quote = Quote.query.get(choice)
-    return render_template('random_quote.html', quote=quote)
-
-
+    
+    
 @app.route('/authors/search')
 def search_by_author():
     """Return authored-choice and single quote as a text string or multiple 
