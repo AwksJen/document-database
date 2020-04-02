@@ -6,26 +6,38 @@
 
 {% block content %}
   <form action="random_quote">
-     <p>Get A Random Positive Quote:
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-5">
+     <p class="do_you">Get A Random Positive Quote:</p> 
+   </div>
+   <div class="col-6">
        <button id="get-random-quote-button" class="btn btn-primary">Get A Quote</button>
-     </p> 
+     </div>
+   </div>
      </form> 
-
-     <div id="random-quote-text"></div>
-
+     <div class="row">
+     <div class="col-1"> </div>
+      <div class="col-5" id="random-quote-text"></div>
+    </div>
      <form action="authored_quotes">
-       <p>Type in an author to get quotes from them:
-          <input class="form-control" type="text" name="author" id="author-field" placeholder="Author Name"><button id="get-authored-quotes" class="btn btn-primary" type="submit">Get Quote(s)</button></p>
+      <div class="row">
+        <div class="col-1"> </div>
+        <div class="col-5">
+       <p><input class="form-control" type="text" name="author" id="author-field" placeholder="Author Name"></p></div>
+       <div class="col-6"><button id="get-authored-quotes" class="btn btn-primary" type="submit">Get Quote(s)</button></p></div></div>
+          
      </form>
 
         <div id="quotes-text"></div>
 
-    <form action="possible_author_identities">
+   <!--  <form action="possible_author_identities">
       <p>Type in any part of a quote to indentify the author(s):
       <input class="form-control" type="text" name="quote(s)" id="partial-quote-field" placeholder="Words from Partial Quote"><button id="get-possible-authors-button" class="btn btn-primary" type="submit">Get Possible Author(s)</button></p>
     </form>
 
-    <div id="authors-list-text"></div>
+    <div id="authors-list-text"></div> -->
 
 
 {% endblock %}
