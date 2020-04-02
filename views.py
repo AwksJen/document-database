@@ -16,7 +16,6 @@ app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'secretzzz')
 
 
-
 @app.route('/')
 def index():
     """Show the index."""
@@ -31,7 +30,7 @@ def random_quote():
     print(r)
     quote = QUOTES[r]
 
-    return render_template('random_quote.html', quote = quote)
+    return render_template('random_quote.html', quote = quote, author = r)
 
 
 @app.route('/authored_quotes')
