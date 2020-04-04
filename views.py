@@ -39,24 +39,26 @@ def authored_quotes():
        quotes as"""
     author = request.args.get('author')
     quote = QUOTES.get(author)
-    return render_template('authored_quote-s.html', quote = quote)
+    return render_template('authored_quote-s.html', quote = quote, author=author)
     
     
-@app.route('/authors/search')
+@app.route('/authors_quotes')
 def search_by_author():
     """Return authored-choice and single quote as a text string or multiple 
        quotes as"""
     author = request.args.get('author')
     quotes = author.quotes
-    return render_template('results.html', quotes=quotes)
+    return render_template('authors_quotes.html', quotes=quotes, author=author)
 
 
 @app.route('/authors')
 def authors_list():
     """Return list of author possibilities"""
     # TODO: Create a new template and list all the authors on it.
-    authors = Author.query.all()
-    return render_template('authors_list.html', authors=authors)
+    # authors = Author.query.all()
+    authors_list = list(QUOTES.keys())
+
+    return render_template('authors_list.html', authors_list=authors_list)
 
 
 

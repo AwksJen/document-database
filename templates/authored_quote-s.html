@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Author's Quote(s){% endblock %}
+{% block title %} {{ author }} {% endblock %}
 
-{% block header %}<p id="author_field">{{ r }}{% endblock %}</p>
+{% block header %}<p id="author_field">{{ author }}{% endblock %}</p>
 
 {% block content %}
 <p id="authors-list-text">{{ quote }}</p>
 {% endblock %}
+
