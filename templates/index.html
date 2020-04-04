@@ -31,7 +31,15 @@
      </form>
 
         <div id="quotes-text"></div>
-       
+
+        <form action="authors_quotes">
+      <div class="row">
+        <div class="col-1"> </div>
+        <div class="col-5">
+       <p><input class="form-control" type="text" name="author" id="author-field2" placeholder="Author Name"></p></div>
+       <div class="col-6"><button id="get-authors-quotes" class="btn btn-primary" type="submit">Get Quote(s)</button></p></div></div>
+          
+     </form>
 
    <!--  <form action="possible_author_identities">
       <p>Type in any part of a quote to indentify the author(s):
@@ -39,6 +47,10 @@
     </form> -->
 
     <div id="authors-list-text"></div>
+
+    <div id="authors_list"></div>
+
+    <div id="authors_quotes"></div>
 
 
 {% endblock %}
