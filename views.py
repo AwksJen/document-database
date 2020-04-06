@@ -2,7 +2,7 @@ import os
 
 import random
 
-from seed import QUOTES
+from seed import QUOTES, IMAGES
 
 from flask import Flask, render_template, request
 
@@ -41,7 +41,9 @@ def authored_quotes():
        quotes as"""
     author = request.args.get('author')
     quote = QUOTES.get(author)
-    return render_template('authored_quote-s.html', quote=quote, author=author)
+    image = IMAGES.get(author)
+    return render_template('authored_quote-s.html', quote=quote, author=author,
+        image=image)
 
 
 @app.route('/authors_quotes')
