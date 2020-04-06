@@ -1,10 +1,12 @@
 import os
+
 import random
+
 from seed import QUOTES
 
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request
 
-from models import Author, Quote
+# from models import Author, Quote
 
 app = Flask(__name__)
 
@@ -39,20 +41,20 @@ def authored_quotes():
        quotes as"""
     author = request.args.get('author')
     quote = QUOTES.get(author)
-    return render_template('authored_quote-s.html', quote = quote, author=author)
-    
-    
+    return render_template('authored_quote-s.html', quote=quote, author=author)
+
+
 @app.route('/authors_quotes')
 def search_by_author():
     pass
     """Return authored-choice and single quote as a text string or multiple 
        quotes as"""
     author = request.args.get('author')
-    authors_list = list(QUOTES.keys())
+    all_quotes = QUOTES.get(author)
+    # list(QUOTES.keys())
    # for/if author=author
    # add its value to a new list object
-    
-    return render_template('authors_quotes.html', quotess=quotess, author=author)
+    return render_template('authors_quotes.html', all_quotes=all_quotes, author=author)
 
 
 @app.route('/authors')
@@ -63,6 +65,14 @@ def authors_list():
     authors_list = list(QUOTES.keys())
 
     return render_template('authors_list.html', authors_list=authors_list)
+
+
+@app.route('/quotes')
+def quotes_list():
+    """ """
+    quotes_list = list(QUOTES.values())
+
+    return render_template('quotes_list.html', quotes_list=quotes_list)
 
 
 
