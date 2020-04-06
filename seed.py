@@ -1,5 +1,5 @@
-from sqlalchemy import func
 from flask_sqlalchemy import SQLAlchemy
+
 
 from models import *
 # from faker import Faker

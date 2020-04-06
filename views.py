@@ -44,11 +44,15 @@ def authored_quotes():
     
 @app.route('/authors_quotes')
 def search_by_author():
+    pass
     """Return authored-choice and single quote as a text string or multiple 
        quotes as"""
     author = request.args.get('author')
-    quotes = author.quotes
-    return render_template('authors_quotes.html', quotes=quotes, author=author)
+    authors_list = list(QUOTES.keys())
+   # for/if author=author
+   # add its value to a new list object
+    
+    return render_template('authors_quotes.html', quotess=quotess, author=author)
 
 
 @app.route('/authors')
