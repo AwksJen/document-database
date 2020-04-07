@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 
+from PIL import Image
 
 from models import *
 # from faker import Faker
@@ -30,14 +31,15 @@ QUOTES = {'Walt Disney': 'The way to get started is to quit talking and begin \
     Lennon': 'Life is what happens when you\re busy making other plans.', 'Bob\
     Marley': 'Love the life you live. Live the life you love.'}
 
-IMAGES = {'Walt Disney': 'https://www.google.com/url?sa=i&url=http%3A%\
-    2F%2Fwww.justdisney.com%2Fwalt_disney%2Fpictures%2Fpictures.html&psig=AOvVa\
-    w0ljElmPMSg92XFKF5yAITB&ust=1586268200721000&source=images&cd=vfe&ved=0CAIQ\
-    jRxqFwoTCOjU_db70-gCFQAAAAAdAAAAABAD','Nelson Mandela': 'https://www.\
-    google.com/search?q=image+of+nelson+mandela&tbm=isch&source=iu&ictx=1&fir=AL\
-    z9H_IItfy7VM%253A%252CXAZDRAc8oWa4GM%252C_&vet=1&usg=AI4_-kS6vSLmgqupvfUhxk\
-    2gP21pUKRphw&sa=X&ved=2ahUKEwiAi4Ga_NPoAhVZWs0KHR3cD6YQ9QEwBHoECAcQDA#\
-    imgrc=ALz9H_IItfy7VM:'}
+IMAGES = {'Walt Disney': 'static/images/waltDisney.jpeg', 'Nelson Mandela': \
+    'static/images/nelsonMandela.jpeg', 'Eleanor Roosevelt': 'static/images/\
+    eleanorRoosevelt.jpeg', 'James Cameron': '', 'John Lennon': '', \
+    'Aristotle:': 'static/images/aristotle.jpeg', 'Margaret Mead': \
+    'static/images/margaretMead.jpeg', 'Babe Ruth':\
+    'static/images/babeRuth.png', 'Dalai Lama': 'static/images/dalaiLama.jpeg',\
+    'Bob Marley': 'static/images/bobMarley.jpeg', 'Mother Teresa': \
+    'static/images/motherTeresa.jpeg', 'Anne Frank':\
+    'static/images/anneFrank.jpeg'}
 
 
 # def seed():
