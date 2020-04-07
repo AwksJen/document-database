@@ -1,5 +1,5 @@
-from seed import QUOTES
-from models import connect_to_db, db, Author, Quote
+
+from models import connect_to_db
 from views import app
 
 
@@ -12,3 +12,6 @@ if __name__ == '__main__':
     connect_to_db(app)
 
     app.run()
+
+
+# took out from seed import & from models import extras
