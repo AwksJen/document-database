@@ -27,9 +27,8 @@ def random_quote():
     r = random.choice(list(QUOTES.keys()))
     print(r)
     quote = QUOTES[r]
-    image = Image.open(IMAGES[r])
-    return render_template('random_quote.html', quote=quote, author=r,
-        image=image)
+    image = IMAGES[r]
+    return render_template('random_quote.html', quote=quote, author=r, image=image)
 
 
 @app.route('/authored_quotes')
@@ -38,10 +37,9 @@ def authored_quotes():
        quotes as"""
     author = request.args.get('author')
     quote = QUOTES.get(author)
-    image = Image.open(IMAGES.get(author))
+    image = IMAGES.get(author)
 
-    return render_template('authored_quote-s.html', quote=quote, author=author,
-                                                    image=image)
+    return render_template('authored_quote-s.html', quote=quote, author=author, image=image)
 
 
 @app.route('/authors_quotes')
