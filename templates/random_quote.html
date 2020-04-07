@@ -4,8 +4,8 @@
 
 {% block header %}} {{ author }} {% endblock %}
 
-{% block paragraph %}
-  <img id="author-image">{{ image }}</p>
+{% block content %}
+  <img src="{{ image }}" />
 
   <p id="random-quote-text">{{ quote }}</p>
 
@@ -20,5 +20,9 @@
     </div>
         </form> 
    
-     
-{% endblock %}
+    {% endblock %} 
+
+<!-- https://www.geeksforgeeks.org/working-images-python/ -->
+<!-- https://pillow.readthedocs.io/en/stable/installation.html#building-on-macos -->
+<!-- https://stackoverflow.com/questions/22603329/storing-and-retrieving-images-in-dictionary-python -->
+<!--  -->
