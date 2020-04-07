@@ -31,15 +31,18 @@ QUOTES = {'Walt Disney': 'The way to get started is to quit talking and begin \
     Lennon': 'Life is what happens when you\re busy making other plans.', 'Bob\
     Marley': 'Love the life you live. Live the life you love.'}
 
-IMAGES = {'Walt Disney': 'static/images/waltDisney.jpeg', 'Nelson Mandela':
-    'static/images/nelsonMandela.jpeg', 'Eleanor Roosevelt': 'static/images/\
-    eleanorRoosevelt.jpeg', 'James Cameron': '', 'John Lennon': '',
-    'Aristotle:': 'static/images/aristotle.jpeg', 'Margaret Mead':
-    'static/images/margaretMead.jpeg', 'Babe Ruth':
-    'static/images/babeRuth.png', 'Dalai Lama': 'static/images/dalaiLama.jpeg',
-    'Bob Marley': 'static/images/bobMarley.jpeg', 'Mother Teresa':
-    'static/images/motherTeresa.jpeg', 'Anne Frank':
-    'static/images/anneFrank.jpeg'}
+IMAGES = {'Walt Disney': 'static/images/waltDisney.jpeg',
+    'Nelson Mandela': 'static/images/nelsonMandela.jpeg',
+    'Eleanor Roosevelt': 'static/images/eleanorRoosevelt.jpeg',
+    'James Cameron': 'static/images/jamesCameron.jpeg',
+    'John Lennon': 'static/images/johnLennon.jpeg',
+    'Aristotle:': 'static/images/aristotle.jpeg',
+    'Margaret Mead': 'static/images/margaretMead.jpeg',
+    'Babe Ruth': 'static/images/babeRuth.jpeg',
+    'Dalai Lama': 'static/images/dalaiLama.jpeg',
+    'Bob Marley': 'static/images/bobMarley.jpeg',
+    'Mother Teresa': 'static/images/motherTeresa.jpeg',
+    'Anne Frank': 'static/images/anneFrank.jpeg'}
 
 
 # def seed():
