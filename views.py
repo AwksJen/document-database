@@ -13,6 +13,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'secretzzz')
 
+
 # app.secret_key = os.getenv('SECRET_KEY', 'secretzzz
 @app.route('/')
 def index():
@@ -52,8 +53,7 @@ def search_by_author():
     # list(QUOTES.keys())
    # for/if author=author
    # add its value to a new list object
-    return render_template('authors_quotes.html', all_quotes=all_quotes,
-         author=author)
+    return render_template('authors_quotes.html', all_quotes=all_quotes, author=author)
 
 
 @app.route('/authors')
@@ -72,6 +72,3 @@ def quotes_list():
     quotes_list = list(QUOTES.values())
 
     return render_template('quotes_list.html', quotes_list=quotes_list)
-
-
-
